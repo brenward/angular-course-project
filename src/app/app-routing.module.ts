@@ -18,15 +18,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
 const appRoutes: Routes = [
     {path:'',redirectTo:'recipes',pathMatch:'full'},
-    {path:'recipes',component:RecipesComponent, children:[
-        {path:'',component:RecipeDetailEmptyComponent},
-        {path:'new',component:RecipeEditComponent, canActivate:[AuthGuardService]},
-        {path:':id',component:RecipeDetailComponent},        
-        {path:':id/edit',component:RecipeEditComponent, canActivate:[AuthGuardService]}
-    ]},
     {path:'shopping-list',component:ShoppingListComponent},
-     {path:'signup',component:SignupComponent},
-     {path:'signin',component:SigninComponent}
 ];
 
 @NgModule({
