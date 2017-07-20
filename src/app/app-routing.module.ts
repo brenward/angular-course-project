@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -17,7 +18,8 @@ import { RecipeDetailEmptyComponent } from './recipes/recipe-detail-empty/recipe
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
-    {path:'',redirectTo:'recipes',pathMatch:'full'},
+    {path:'',component:HomeComponent},
+    {path:'recipes',loadChildren:'./recipes/recipes.module#RecipesModule'},
     {path:'shopping-list',component:ShoppingListComponent},
 ];
 
