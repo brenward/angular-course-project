@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuardService } from './auth/auth-guard.service';
@@ -8,20 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import {AppRoutingModule} from './app-routing.module';
 import { AuthService } from './auth/auth.service';
 import { ShoppingListModule } from "app/shopping-list/shopping-list.module";
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,  
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +26,10 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     SharedModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
-  providers: [ShoppingListService,RecipeService,DataStorageService, AuthService, AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

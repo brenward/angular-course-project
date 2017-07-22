@@ -1,11 +1,11 @@
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './core/home/home.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import {NgModule} from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './core/header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -24,7 +24,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports:[RouterModule.forRoot(appRoutes)],
+    imports:[RouterModule.forRoot(appRoutes,{preloadingStrategy: PreloadAllModules})],
     exports:[RouterModule]
 })
 export class AppRoutingModule{
